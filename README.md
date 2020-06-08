@@ -1,4 +1,4 @@
-# training-plan-microservices - 3 microservices created. Below are the details:
+# training-plan-microservices - 3 microservices
 
 #aggregator-service - microservice conatining API to fetch the details of user and orders by the user.
 
