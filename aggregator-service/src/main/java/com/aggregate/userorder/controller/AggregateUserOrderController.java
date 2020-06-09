@@ -24,6 +24,12 @@ public class AggregateUserOrderController {
 	
 	@Autowired
 	private AggregateUserOrderService aggregateUserOrderService;
+
+	@GetMapping("/check")
+	public ResponseEntity<String> check() {
+		LOGGER.info("getUserData started");
+		return new ResponseEntity<>("user-service started",HttpStatus.OK);
+	}
 	
 	/**
 	 * get order and user details by userId

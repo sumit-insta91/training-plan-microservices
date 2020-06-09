@@ -21,6 +21,16 @@ public class UserData {
 	private String name;
     private Integer age;
     private String email;
+	
+    public UserData() {
+	}
+    
+	public UserData(String name, Integer age, String email) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.email = email;
+	}
 	public Long getId() {
 		return id;
 	}
