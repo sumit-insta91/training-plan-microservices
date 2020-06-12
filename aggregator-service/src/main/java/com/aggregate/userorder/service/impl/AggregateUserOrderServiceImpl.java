@@ -35,10 +35,10 @@ public class AggregateUserOrderServiceImpl implements AggregateUserOrderService 
 	public AggregateUserOrdersTo getuserAndOrderdata(Long userId) {
 		LOGGER.info("getuserAndOrderdata() start"); 
 		AggregateUserOrdersTo aggregateDataTo = new AggregateUserOrdersTo();
-		ResponseEntity<UserDataTo> userDataTo = restTemplate.exchange("http://localhost:8081/user/"+userId, HttpMethod.GET, null, UserDataTo.class);
+		ResponseEntity<UserDataTo> userDataTo = restTemplate.exchange("http://user-service-deployment:8081/user/"+userId, HttpMethod.GET, null, UserDataTo.class);
 		LOGGER.info("received data of user"); 
 		aggregateDataTo.setUserDetails(userDataTo.getBody());
-		ResponseEntity<UserOrdersListTo> userOrdersListTo = restTemplate.exchange("http://localhost:8082/orders/"+userId, HttpMethod.GET, null, UserOrdersListTo.class);
+		ResponseEntity<UserOrdersListTo> userOrdersListTo = restTemplate.exchange("http://order-service-deployment:8082/orders/"+userId, HttpMethod.GET, null, UserOrdersListTo.class);
 		LOGGER.info("received orders of user"); 
 		aggregateDataTo.setOrders(userOrdersListTo.getBody().getOrders());
 		LOGGER.info("getuserAndOrderdata() end"); 
