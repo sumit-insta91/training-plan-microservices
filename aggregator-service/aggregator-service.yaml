@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: aggregator-service
-        image: sumitkumar04/aa-new-service
+        image: sumitkumar04/aggregator-service
         ports:
         - containerPort: 8080

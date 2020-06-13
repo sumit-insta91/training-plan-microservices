@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: sumitkumar04/user-service-new
+        image: sumitkumar04/user-service
         ports:
         - containerPort: 8081
+    
